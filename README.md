@@ -8,6 +8,9 @@ DISCLAIMER:
 
     It's an indefinitely paused project...
 
+NOTE:
+   You need to put all files in a folder of the same name as the main .ino file (without the .ino extension).
+   Namely "333_RGB_LED_minicube_30_Release_1".
 
 
 SCHEMATICS DESCRIPTION
