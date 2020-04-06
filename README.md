@@ -30,8 +30,8 @@ SCHEMATICS DESCRIPTION
 
   One row is lit at a time, for a maximum of 1/9th intensity.
 
-  Rows    : are along the X axis (width)
-  Columns : are planes along Y-Z axis really (I did call it column in code.. I meant plane!)
+  Rows    : are along the X axis (width).
+  Columns : are planes along Y-Z axis really (I did call it column in code.. I meant plane!).
 
 
   Arduino digital output ("pin") - to - RGB LED (Common cathode) mapping:
