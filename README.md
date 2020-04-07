@@ -13,6 +13,7 @@ NOTE:
    Namely "333_RGB_LED_minicube_30_Release_1".
 
 
+
 SCHEMATICS DESCRIPTION
 
   Directly driven by and connected to an Arduino Nano (or compatible).
