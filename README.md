@@ -25,13 +25,12 @@ SCHEMATICS DESCRIPTION
   
      ---> NOTE! Keep the total current for one row (3 RGB LEDs as white) within Arduino specs for one pin (the row pin)! <---
 
-  9 rows of 3 RGB LEDs each, organized as 3 by 3 rows in a plane, as seen from the side.
-  A specific RGB LED is lit by intersection between a row and a plane (or column).
-
+  The cube is really a 2D matrix of 3 columns by 9 rows.
+  The 9 rows again are just positioned into a 3 by 3 pattern to make a cube.
   One row is lit at a time, for a maximum of 1/9th intensity.
 
-  Rows    : are along the X axis (width).
-  Columns : are planes along Y-Z axis really (I did call it column in code.. I meant plane!).
+  Rows run along the X axis (width).
+  Columns run along the Y and Z axis (a plane).
 
 
   Arduino digital output ("pin") - to - RGB LED (Common cathode) mapping:
@@ -50,9 +49,21 @@ SCHEMATICS DESCRIPTION
                  Top    Digital outputs/pins
                        /
               9  12  15
-     Front   10  13  16   Back
+     Front   10  13  16    Back
              11  14  17
      ----------------------------  <-- Base (PCB / circuit board)
+
+
+   Row numbering, the same right side view:
+
+                 Top
+
+              0   3   6
+     Front    1   4   7    Back
+              2   5   8
+     ----------------------------  <-- Base (PCB / circuit board)
+
+
 
 
      Another way to look at it:
@@ -81,6 +92,4 @@ SCHEMATICS DESCRIPTION
                          0   1   2  ---> Z axis (depth)
                 
                       Right side
-
-
 
