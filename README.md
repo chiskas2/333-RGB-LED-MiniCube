@@ -15,8 +15,6 @@ NOTE:
 
 SCHEMATICS DESCRIPTION
 
-
-  No schematics atm but in short: 
   Directly driven by and connected to an Arduino Nano (or compatible).
 
   Each color plane MUST HAVE AN ASSOIATED SERIES RESISTOR !!
