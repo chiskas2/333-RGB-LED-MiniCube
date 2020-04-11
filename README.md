@@ -18,17 +18,21 @@ SCHEMATICS DESCRIPTION
 
   Directly driven by and connected to an Arduino Nano (or compatible).
 
-  Each color plane MUST HAVE AN ASSOIATED SERIES RESISTOR !!
+  Each color column (or plane) MUST HAVE AN ASSOIATED SERIES RESISTOR !!
 
-    NOTE! Keep the total current for one row (with 3 RGB LEDs as white) within Arduino specs!
+    NOTE! Keep the total max current for one row (3 RGB LEDs as white) within Arduino specs!
   
   The value used was chosen by experimentation, and is what my RGB LEDs seemed to be the most white with
-  (with max but still limited intensity on R,G and B channels). That should total about 8.5 mA for each fully lit RGB LED.
-  A rather consevative load. Times 3 is 25.5 mA for one row, and below Arduino's max of 40 mA. Your RGB LED's may vary.
+  (with max but still a somewhat conservative intensity on R,G and B channels). That totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and below Arduino's max of 40 mA pr. pin 
+  
+  (Beware it's a 200 mA limit total all pins, regardless! According to Note 3 under Table 32-2 of the Atmega 328P datasheet) 
+  
+  Your RGB LED's may vary.
+ 
 
 
   The cube is really a 2D matrix of 3 columns by 9 rows.
-  The 9 rows again are just positioned into a 3 by 3 pattern to make a cube.
+  The 9 rows again are just positioned into a 3 by 3 pattern to make a cube (translated in software as a cube).
   One row is lit at a time, for a maximum of 1/9th intensity.
 
   Rows run along the X axis (width).
