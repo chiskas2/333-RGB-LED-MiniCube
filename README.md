@@ -22,12 +22,12 @@ SCHEMATICS DESCRIPTION
 
     NOTE! Keep the total max current for one row (3 RGB LEDs as white) within Arduino specs!
   
-  The value used was chosen by experimentation, and is what my RGB LEDs seemed to be the most white with
-  (with max but still a somewhat conservative intensity on R,G and B channels). That totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and is below Arduino's max of 40 mA pr. pin 
+  The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with
+  (while still having a somewhat conservative intensity on the R,G and B channels). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and is below Arduino's max of 40 mA pr. pin. In addition any one row is only on for 1/9th the time.
   
   (Beware it's a 200 mA limit total all pins, regardless! According to Note 3 under Table 32-2 of the Atmega 328P datasheet) 
   
-  Your RGB LED's may vary.
+  Your RGB LED's may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular type if it has a name.
  
 
 
@@ -39,7 +39,7 @@ SCHEMATICS DESCRIPTION
   Columns run along the Y and Z axis (a plane).
 
 
-  Arduino digital output ("pin") - to - RGB LED (Common cathode) mapping:
+  Arduino digital output (pin) - to - RGB LED mapping:
  
     0,3,6 (PortD)       = blue planes  ( 2.7 k ohm series resistors )
     1,4,7 (PortD)       = green planes ( 2.7 k ohm series resistors )
