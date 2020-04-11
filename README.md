@@ -23,7 +23,7 @@ SCHEMATICS DESCRIPTION
     NOTE! Keep the total max current for one row (3 RGB LEDs as white) within Arduino specs!
   
   The value used was chosen by experimentation, and is what my RGB LEDs seemed to be the most white with
-  (with max but still a somewhat conservative intensity on R,G and B channels). That totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and below Arduino's max of 40 mA pr. pin 
+  (with max but still a somewhat conservative intensity on R,G and B channels). That totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and is below Arduino's max of 40 mA pr. pin 
   
   (Beware it's a 200 mA limit total all pins, regardless! According to Note 3 under Table 32-2 of the Atmega 328P datasheet) 
   
