@@ -20,12 +20,12 @@ SCHEMATICS DESCRIPTION
 
   Each color column (or plane) MUST HAVE AN ASSOIATED SERIES RESISTOR !!
 
-    NOTE! Keep the total max current for one row (3 RGB LEDs as white) within Arduino specs!
+    NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within Arduino specs!
   
   The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with
-  (while still having a somewhat conservative intensity on the R,G and B channels). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and is below Arduino's max of 40 mA pr. pin. In addition any one row is only on for 1/9th the time.
+  (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
   
-  (Beware it's a 200 mA limit total all pins, regardless! According to Note 3 under Table 32-2 of the Atmega 328P datasheet) 
+  (Beware there's a 200 mA limit total all pins, regardless! According to Note 3 under Table 32-2 of the Atmega 328P datasheet) 
   
   Your RGB LED's may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular type if it has a name.
  
