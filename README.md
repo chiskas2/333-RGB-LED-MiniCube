@@ -191,11 +191,11 @@ This will be the row direction.
     |          |          |
     |          |          |
   
-Row N      Row N+1    Row N+2
+    Row N      Row N+1    Row N+2
 
-     Row direction
+         Row direction (downwards)
 
 Build 3 of these 3 by 3 LED matrices.
 Connect all matching columns together (so it'll be a plane)
-Each column color leg must have their own resistor (depending on color and RGB LED specs)
+Each column color leg must have their own resistor as mentioned above (depending on color and RGB LED specs).
 All rows are held separate, and connected directly to the Arduino Nano's row pins (pin 9-17)
