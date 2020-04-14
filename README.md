@@ -142,7 +142,7 @@ Assuming the pinout is BGCR (Blue - Green - common Cathode - Red)
     R          R          R
 
 
-Then bend and solder the "color legs" along this direction
+Then bend and solder all "color legs" together along this direction
 
     B----------B----------B----------
     G----------G----------G----------    ----> column direction
@@ -169,9 +169,9 @@ Do this for three columns total
     C          C          C
     R----------R----------R----------
 
-
+Do not snip off the last protruding legs!
 Then bend the common Cathode pin above the others (no shorts!) and in the other direction.
-This will be the row direction.
+(Ofc connect all Cathodes in the same row together).
 
       B----------B----------B----------
       G----------G----------G----------    ----> column 1
