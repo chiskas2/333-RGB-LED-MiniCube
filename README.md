@@ -3,6 +3,18 @@
 A small 3x3x3 RGB LED cube with 128 individual PWM levels for 81 LEDs (27 RGB) @ 52.3 Hz.
 Basically just a test.
 
+    Modes (functions cycled with the one button):
+    
+    - Color cube test (RGB mapped to XYZ axis from black (as in off) to white)
+    - Audio triggered animation cycling (not too good, a bit sensitive)
+    - DNA spin (spinning twisted plane)
+    - RGB cycling all LEDs simultaneously
+    - RGB slow cycling mood lamp thingy
+    - Blinking (every other LED)
+    - Orbit (light orbiting center in complementary color)
+    - 3-band equalizer / FFT Z-scroller (not so good either..)
+    
+
 
     DISCLAIMER
 
