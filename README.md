@@ -25,31 +25,34 @@ It's an indefinitely paused project...
 
     It's just some tests. I'm not too happy with all of them either.
 
-Using Arduino IDE (I last compiled it on version 1.8.10, but newer versions should work fine. Probably).
+Compiled using Arduino IDE (I last used version 1.8.10, but newer versions should work fine. Probably).
 https://www.arduino.cc/
 
     NOTE
     You need to put all files in a folder of the same name as the main .ino file (without the .ino extension).
-    Namely "333_RGB_LED_minicube_30_Release_1". Alternatively rename both (folder and main .ino file) to some other name.
+    Namely "333_RGB_LED_minicube_30_Release_1".
+    Alternatively rename both (folder and main .ino file) to some other name.
 
 
+Refer also to the included schematics (pdf).
 
     SCHEMATICS DESCRIPTION
 
-Refer also to the included schematics (pdf).
- 
 Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it, and using externally referenced analogue reading (Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it).
-  
+
+    You don't have to use or include the mic / preamp thing if you don't want to,
+    but the audio functions won't work then of course.
+
 Each color column (or plane) MUST HAVE AN ASSOCIATED SERIES RESISTOR!
 
-    NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within Arduino specs!
-  
 The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
   
+    NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within Arduino specs!
+
     Sidenote: There's a 200 mA limit total for all pins regardless!
    (Atmega 328P datasheet, Table 28.1: http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf#G1411831)
   
-Your RGB LEDs may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular type if it has a name.
+Your RGB LEDs may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular brand it was.
  
 
 
