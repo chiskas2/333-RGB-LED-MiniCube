@@ -50,14 +50,14 @@ Columns run along the Y and Z axis (a plane).
 
 
     Arduino digital output (pin) - to - RGB LED mapping:
- 
-0,3,6 (PortD)       = blue planes  ( 2.7 k ohm series resistors )
-1,4,7 (PortD)       = green planes ( 2.7 k ohm series resistors )
-2,5,8 (portD/B)     = red planes   ( 470 ohm series resistors )
-9-17                = row pins (active-low)
-                      (pin 9 = row 0 upper front, pin 17 = row 8 lower back, see below)
-18                  = Selection button (active-low)
-A7 (Analog input 7) = mic (from preamp)
+
+    0,3,6 (PortD)       = blue planes  ( 2.7 k ohm series resistors )
+    1,4,7 (PortD)       = green planes ( 2.7 k ohm series resistors )
+    2,5,8 (portD/B)     = red planes   ( 470 ohm series resistors )
+    9-17                = row pins (active-low)
+                          (pin 9 = row 0 upper front, pin 17 = row 8 lower back, see below)
+    18                  = Selection button (active-low)
+    A7 (Analog input 7) = mic (from preamp)
 
 
     PIN - TO - ROW position mappings right side view:
@@ -70,7 +70,7 @@ A7 (Analog input 7) = mic (from preamp)
      ----------------------------  <-- Base (PCB / circuit board)
 
 
-   Row numbering, the same right side view:
+    Row numbering, the same right side view:
 
                  Top
 
@@ -84,7 +84,7 @@ A7 (Analog input 7) = mic (from preamp)
 
     Another way to look at it:
 
-Isometric side view (Row pins and row numbers indicated on the "Right side")
+    Isometric side view (Row pins and row numbers indicated on the "Right side")
 
         
                                  Left side
