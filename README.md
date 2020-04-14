@@ -47,7 +47,7 @@ Each color column (or plane) MUST HAVE AN ASSOCIATED SERIES RESISTOR!
 
 The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
   
-    NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within Arduino specs!
+    NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within 40 mA!
 
     Sidenote: There's a 200 mA limit total for all pins regardless!
    (Atmega 328P datasheet, Table 28.1: http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf#G1411831)
