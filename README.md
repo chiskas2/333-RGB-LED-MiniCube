@@ -3,35 +3,34 @@
 A small 3x3x3 RGB LED cube with 128 individual PWM levels for 81 LEDs (27 RGB) @ 52.3 Hz.
 Basically just a test.
 
+    DISCLAIMER
+
+    This is provided on an as-is basis.
+    It's only for a 3x3x3 cube (so "somewhat limited" resolution).
+    The aim was (is?) an 8x8x8 cube.
+    Some things are left unfinished, some unneccerasy bits included.
+
+It's an indefinitely paused project...
+
     Modes (functions cycled with the one button):
     
     - Color cube test (RGB mapped to XYZ axis from black (as in off) to white)
-    - Audio triggered animation cycling (not too good, a bit sensitive)
-    - DNA spin (spinning twisted plane)
-    - RGB cycling all LEDs simultaneously
-    - RGB slow cycling mood lamp thingy
+    - Audio triggered animation cycling (not too good, a bit sensitive. More animations than with the button)
+    - DNA spin (spinning twisted plane, periodically with and without blanking between frames)
+    - RGB cycling all LEDs simultaneously (think one big RGB LED)
+    - RGB slow cycling mood lamp thingy (smoothly different on all LED's)
     - Blinking (every other LED)
     - Orbit (light orbiting center in complementary color)
     - 3-band equalizer / FFT Z-scroller (not so good either..)
-    
 
-
-    DISCLAIMER
-
-This is provided on an as-is basis.
-It's only for a 3x3x3 cube (so "somewhat limited" resolution).
-The aim was (is?) an 8x8x8 cube.
-Some things are left unfinished, some unneccerasy bits included.
-
-    It's an indefinitely paused project...
-
+    It's just some tests. I'm not too happy with all of them either.
 
 Using Arduino IDE (I last compiled it on version 1.8.10, but newer versions should work fine. Probably).
 https://www.arduino.cc/
 
-NOTE
-   You need to put all files in a folder of the same name as the main .ino file (without the .ino extension).
-   Namely "333_RGB_LED_minicube_30_Release_1". Alternatively rename both (folder and main .ino file) to some other identical name.
+    NOTE
+    You need to put all files in a folder of the same name as the main .ino file (without the .ino extension).
+    Namely "333_RGB_LED_minicube_30_Release_1". Alternatively rename both (folder and main .ino file) to some other name.
 
 
 
