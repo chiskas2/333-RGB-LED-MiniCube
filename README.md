@@ -12,9 +12,14 @@ DISCLAIMER
 
     It's an indefinitely paused project...
 
+
+Using Arduino IDE (I last compiled it on version 1.8.10, but newer versions should work fine. Probably).
+https://www.arduino.cc/
+
 NOTE
    You need to put all files in a folder of the same name as the main .ino file (without the .ino extension).
    Namely "333_RGB_LED_minicube_30_Release_1". Alternatively rename both (folder and main .ino file) to some other identical name.
+
 
 
 SCHEMATICS DESCRIPTION
