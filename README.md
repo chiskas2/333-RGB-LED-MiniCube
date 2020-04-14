@@ -4,11 +4,12 @@ A small 3x3x3 RGB LED cube with 128 individual PWM levels for 81 LEDs (27 RGB) @
 Basically just a test.
 
 
-DISCLAIMER
-    This is provided on an as-is basis.
-    It's only for a 3x3x3 cube (so "somewhat limited" resolution).
-    The aim was (is?) an 8x8x8 cube.
-    Some things are left unfinished, some unneccerasy bits included.
+    DISCLAIMER
+
+This is provided on an as-is basis.
+It's only for a 3x3x3 cube (so "somewhat limited" resolution).
+The aim was (is?) an 8x8x8 cube.
+Some things are left unfinished, some unneccerasy bits included.
 
     It's an indefinitely paused project...
 
@@ -22,42 +23,41 @@ NOTE
 
 
 
-SCHEMATICS DESCRIPTION
+    SCHEMATICS DESCRIPTION
 
-  Refer also to the included schematics (pdf).
+Refer also to the included schematics (pdf).
+ 
+Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it, and using externally referenced analogue reading (Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it).
   
-  Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it, and using externally referenced analogue reading (Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it).
-  
-  Each color column (or plane) MUST HAVE AN ASSOIATED SERIES RESISTOR!
+Each color column (or plane) MUST HAVE AN ASSOIATED SERIES RESISTOR!
 
     NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within Arduino specs!
   
-  The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with
-  (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
+The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
   
-  Sidenote: There's a 200 mA limit total for all pins regardless! (Atmega 328P datasheet, Table 32-2, Note 3)
+    Sidenote: There's a 200 mA limit total for all pins regardless! (Atmega 328P datasheet, Table 32-2, Note 3)
   
-  Your RGB LEDs may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular type if it has a name.
+Your RGB LEDs may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular type if it has a name.
  
 
 
-  The cube is really a 2D matrix of 3 columns by 9 rows.
-  The 9 rows again are just positioned into a 3 by 3 pattern to make a cube (translated in software as a cube).
-  One row is lit at a time, for a maximum of 1/9th intensity.
+The cube is really a 2D matrix of 3 columns by 9 rows.
+The 9 rows again are just positioned into a 3 by 3 pattern to make a cube (translated in software as a cube).
+One row is lit at a time, for a maximum of 1/9th intensity.
 
-  Rows run along the X axis (width).
-  Columns run along the Y and Z axis (a plane).
+Rows run along the X axis (width).
+Columns run along the Y and Z axis (a plane).
 
 
-  Arduino digital output (pin) - to - RGB LED mapping:
+    Arduino digital output (pin) - to - RGB LED mapping:
  
-    0,3,6 (PortD)       = blue planes  ( 2.7 k ohm series resistors )
-    1,4,7 (PortD)       = green planes ( 2.7 k ohm series resistors )
-    2,5,8 (portD/B)     = red planes   ( 470 ohm series resistors )
-    9-17                = row pins (active-low)
-                          (pin 9 = row 0 upper front, pin 17 = row 8 lower back, see below)
-    18                  = Selection button (active-low)
-    A7 (Analog input 7) = mic (from preamp)
+0,3,6 (PortD)       = blue planes  ( 2.7 k ohm series resistors )
+1,4,7 (PortD)       = green planes ( 2.7 k ohm series resistors )
+2,5,8 (portD/B)     = red planes   ( 470 ohm series resistors )
+9-17                = row pins (active-low)
+                      (pin 9 = row 0 upper front, pin 17 = row 8 lower back, see below)
+18                  = Selection button (active-low)
+A7 (Analog input 7) = mic (from preamp)
 
 
     PIN - TO - ROW position mappings right side view:
@@ -82,9 +82,9 @@ SCHEMATICS DESCRIPTION
 
 
 
-     Another way to look at it:
+    Another way to look at it:
 
-     Isometric side view (Row pins and row numbers indicated on the "Right side")
+Isometric side view (Row pins and row numbers indicated on the "Right side")
 
         
                                  Left side
