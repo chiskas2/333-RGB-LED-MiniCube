@@ -1,6 +1,6 @@
 # 333-RGB-LED-MiniCube
 
-Main (only) feature: 3x3x3 RGB LED cube with 128 individual PWM levels for 81 LEDs (27 RGB) @ 52.3 Hz.
+A small 3x3x3 RGB LED cube with 128 individual PWM levels for 81 LEDs (27 RGB) @ 52.3 Hz.
 Basically just a test.
 
 
@@ -19,8 +19,11 @@ NOTE
 
 SCHEMATICS DESCRIPTION
 
-  Directly driven by and connected to an Arduino Nano (or compatible).
-  Each color column (or plane) MUST HAVE AN ASSOIATED SERIES RESISTOR !!
+  Refer also to the included schematics (pdf).
+  
+  Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it, and using externally referenced analogue reading (Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it).
+  
+  Each color column (or plane) MUST HAVE AN ASSOIATED SERIES RESISTOR!
 
     NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within Arduino specs!
   
