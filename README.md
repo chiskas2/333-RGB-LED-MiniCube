@@ -4,15 +4,15 @@ Main (only) feature: 3x3x3 RGB LED cube with 128 individual PWM levels for 81 LE
 Basically just a test.
 
 
-DISCLAIMER:
-    This is provided on an as-is basis
-    This is for a 3x3x3 RGB LED cube (so "somewhat limited" resolution..)
+DISCLAIMER
+    This is provided on an as-is basis.
+    It's only for a 3x3x3 cube (so "somewhat limited" resolution).
     The aim was (is?) an 8x8x8 cube.
     Some things are left unfinished, some unneccerasy bits included.
 
     It's an indefinitely paused project...
 
-NOTE:
+NOTE
    You need to put all files in a folder of the same name as the main .ino file (without the .ino extension).
    Namely "333_RGB_LED_minicube_30_Release_1". Alternatively rename both (folder and main .ino file) to some other identical name.
 
@@ -27,7 +27,7 @@ SCHEMATICS DESCRIPTION
   The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with
   (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
   
-  Beware there's a 200 mA limit total all pins, regardless! (According to Note 3 under Table 32-2 of the Atmega 328P datasheet)
+  Sidenote: There's a 200 mA limit total for all pins regardless! (Atmega 328P datasheet, Table 32-2, Note 3)
   
   Your RGB LEDs may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular type if it has a name.
  
