@@ -40,13 +40,14 @@ Refer also to the included schematics (pdf).
  
 Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it, and using externally referenced analogue reading (Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it).
   
-Each color column (or plane) MUST HAVE AN ASSOIATED SERIES RESISTOR!
+Each color column (or plane) MUST HAVE AN ASSOCIATED SERIES RESISTOR!
 
     NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within Arduino specs!
   
 The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
   
-    Sidenote: There's a 200 mA limit total for all pins regardless! (Atmega 328P datasheet, Table 32-2, Note 3)
+    Sidenote: There's a 200 mA limit total for all pins regardless!
+   (Atmega 328P datasheet, Table 28.1: http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf#G1411831)
   
 Your RGB LEDs may vary. Mine were common cathode, diffuse RGB LED's, not sure what particular type if it has a name.
  
@@ -120,3 +121,81 @@ Columns run along the Y and Z axis (a plane).
                 
                       Right side
 
+
+RGB led cube building tip:
+
+Drill 5mm holes (if your RGB LED's are 5 mm in diameter), in a 3x3 pattern in a piece of plank.
+Space them about 15.25 mm apart (I think I used 1.5cm, but better to keep it in line with the standard 2.54 mm pitch)
+Drill just enough so that a LED is fixed upside-down in the hole, to it's rim.
+
+Make one column at a time.
+
+Place one column of LED's, so that their pinouts is lined up perpendicular to the column's direction:
+Assuming the pinout is BGCR (Blue - Green - common Cathode - Red)
+
+    B          B          B
+    G          G          G      ----> column direction
+    C          C          C
+    R          R          R
+
+
+Then bend and solder the "color legs" along this direction
+
+    B----------B----------B----------
+    G----------G----------G----------    ----> column direction
+    C          C          C
+    R----------R----------R----------
+
+Do this for three columns total
+
+
+    B----------B----------B----------
+    G----------G----------G----------    ----> column 1
+    C          C          C
+    R----------R----------R----------
+
+
+    B----------B----------B----------
+    G----------G----------G----------    ----> column 2
+    C          C          C
+    R----------R----------R----------
+
+
+    B----------B----------B----------
+    G----------G----------G----------    ----> column 3
+    C          C          C
+    R----------R----------R----------
+
+
+Then bend the common Cathode pin above the others (no shorts!) and in the other direction.
+This will be the row direction.
+
+    B----------B----------B----------
+    G----------G----------G----------    ----> column 1
+   /C         /C         /C
+  | R--------|-R--------|-R----------
+  |          |          | 
+  |          |          | 
+  | B--------|-B--------|-B----------
+  | G--------|-G--------|-G----------    ----> column 2
+  +-C        +-C        +-C
+  | R--------|-R--------|-R----------
+  |          |          |
+  |          |          |
+  | B--------|-B--------|-B----------
+  | G--------|-G--------|-G----------    ----> column 3
+  +-C        +-C        +-C
+  | R--------|-R--------|-R----------
+  |          |          |
+  |          |          |
+  |          |          |
+  |          |          |
+  
+Row N      Row N+1    Row N+2
+
+     Row direction
+
+Build 3 of these 3 by 3 LED matrices.
+Connect all matching columns together (so it'll be a plane)
+Each column color leg must have their own resistor (depending on color and RGB LED specs)
+All rows are held separate, and connected directly to the Arduino Nano's row pins (pin 9-17)
