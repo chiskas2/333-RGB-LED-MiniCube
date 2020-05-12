@@ -18,7 +18,7 @@ It's an indefinitely paused project...
     - Audio triggered animation cycling (not too good, a bit sensitive. More animations than with the button)
     - DNA spin (spinning twisted plane, periodically with and without blanking between frames)
     - RGB cycling all LEDs simultaneously (think one big RGB LED)
-    - RGB slow cycling mood lamp thingy (smoothly different on all LED's)
+    - RGB slow cycling mood lamp thingy (kind of a plasma lamp, but much slower)
     - Blinking (every other LED)
     - Orbit (light orbiting center in complementary color)
     - 3-band equalizer / FFT Z-scroller (not so good either..)
@@ -38,7 +38,7 @@ Refer also to the included schematics (pdf).
 
     SCHEMATICS DESCRIPTION
 
-Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it, and using externally referenced analogue reading (Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it).
+Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it (using Arduino's external ADC voltage reference) Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it.
 
     You don't have to use or include the mic / preamp thing if you don't want to,
     but the audio functions won't work then of course.
@@ -125,7 +125,7 @@ Columns run along the Y and Z axis (a plane).
                       Right side
 
 
-RGB led cube building tip:
+Quick'n'dirty ASCII art RGB led cube building tip:
 
 Drill 5mm holes (if your RGB LED's are 5 mm in diameter), in a 3x3 pattern in a piece of plank.
 Space them about 15.25 mm apart (I think I used 1.5cm, but better to keep it in line with the standard 2.54 mm pitch)
