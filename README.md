@@ -38,14 +38,14 @@ Refer also to the included schematics (pdf).
 
     SCHEMATICS DESCRIPTION
 
-Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it (using Arduino's external ADC voltage reference) Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it.
+Directly driven by and connected to an Arduino Nano (or compatible). There's also an electret mic preamp to make it react to sound in different ways. Using a 3.3V Zener to stabilize a voltage source for it (thus using Arduino's external ADC voltage reference). Atm I don't remember why I didn't use the Nano's built-in 3.3V source, but this is how I built it. So I included it.
 
     You don't have to use or include the mic / preamp thing if you don't want to,
     but the audio functions won't work then of course.
 
 Each color column (or plane) MUST HAVE AN ASSOCIATED SERIES RESISTOR!
 
-The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time.
+The value was experimentatally determined, and was what my RGB LEDs seemed to be the most white with (while still having a conservative current load). It totalled about 8.5 mA for a fully lit RGB LED. Times 3 = 25.5 mA for one row, and thus below Arduino's max of 40 mA pr. pin. In addition any one row pin is only on for 1/9th the time. So there's some room for using more current if needed.
   
     NOTE! Keep the total max current for one row (3 RGB LEDs as white on one row pin) within 40 mA!
 
@@ -58,7 +58,7 @@ Your RGB LEDs may vary. Mine were common cathode, diffuse RGB LED's, not sure wh
 
 The cube is really a 2D matrix of 3 columns by 9 rows.
 The 9 rows again are just positioned into a 3 by 3 pattern to make a cube (translated in software as a cube).
-One row is lit at a time, for a maximum of 1/9th intensity.
+One row is lit at a time, for a maximum of 1/9th intensity (as mentioned above).
 
 Rows run along the X axis (width).
 Columns run along the Y and Z axis (a plane).
@@ -103,21 +103,22 @@ Columns run along the Y and Z axis (a plane).
 
         
                                  Left side
-          
-                            _ X axis (width)
-                            /|
-                           / ____________
+
+                     X axis (width)     Y axis (height)
+                            _             /|\
+                            /|             |
+                           / ____________  |
                             /   /   /   /|
                          0 /___/___/___/ | 2
                           /   /Top/   /| |
                        1 /___/___/___/ |/| 1
                         /   /   /   /| | |
-        Front        2 /___/___/___/ |/|/| 0      Back
-                pin    | 9 | 12| 15| | | |
-               row     |0__|3__|6__|/|/|/  |
-                pin    | 10| 13| 16| | /  \|/
-               row     |1__|4__|7__|/|/    
-                pin    | 11| 14| 17| /     Y axis (heigth)
+        Front        2 /___/___/___/ |/|/| 0
+                pin    | 9 | 12| 15| | | |         Back
+               row     |0__|3__|6__|/|/|/
+                pin    | 10| 13| 16| | /
+               row     |1__|4__|7__|/|/   
+                pin    | 11| 14| 17| /
                row     |2__|5__|8__|/
                       
                          0   1   2  ---> Z axis (depth)
@@ -169,7 +170,7 @@ Do this for three columns total
     C          C          C
     R----------R----------R----------
 
-Do not snip off the last protruding legs!
+Do not snip off the last protruding legs! These will be soldered to the PCB later (so the diagram is tilted 90 degrees.. sorry about that).
 Then bend the common Cathode pin above the others (no shorts!) and in the other direction.
 (Ofc connect all Cathodes in the same row together).
 
@@ -199,6 +200,8 @@ Then bend the common Cathode pin above the others (no shorts!) and in the other 
          Row direction (downwards)
 
 Build 3 of these 3 by 3 LED matrices.
-Connect all matching columns together (so it'll be a plane)
-Each column color leg must have their own resistor as mentioned above (depending on color and RGB LED specs).
-All rows are held separate, and connected directly to the Arduino Nano's row pins (pin 9-17)
+Connect all matching columns together (so it'll be a plane). If you use a stripboard, make sure the PCB traces goes along the plane. Then you get to connect the matching (same color) planes almost for free.
+Each column color leg (now each plane) must have their own resistor as mentioned above (depending on color and RGB LED specs).
+All rows are held separate, and connected directly to the Arduino Nano's row pins (pin 9-17).
+
+    Remember this ASCII art is tilted 90 degrees to the side, all column 1-3 legs are inserted into the PCB.
